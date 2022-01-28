@@ -1,5 +1,9 @@
 import discord
 from discord.ext import commands
+import json
+
+with open('setting.json','r',encoding='utf8') as jfile:
+    jdata = json.load(jfile)
 
 bot = commands.Bot(command_prefix='[')
 
@@ -19,6 +23,6 @@ async def on_member_remove(member):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(bot.latency)
+    await ctx.send(f'延遲時間{round(bot.latency*1000)} 秒')
 
-bot.run('OTM2MjcyMTk1NDkwMDU0MTk0.YfKxbg.RhRsNp3FPOPErfhO2l4_W2LckBc')
+bot.run(jdata['TOKEN'])
