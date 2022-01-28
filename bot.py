@@ -17,4 +17,8 @@ async def on_member_remove(member):
     channel = bot.get_channel(936520716390653992)
     await channel.send(f'{member} 高歌離席')
 
-bot.run('OTM2MjcyMTk1NDkwMDU0MTk0.YfKxbg.VecEZ6FbAg_SISfWQGKhcGoTBhY')
+@bot.command()
+async def ping(ctx):
+    await ctx.send(bot.latency)
+
+bot.run('OTM2MjcyMTk1NDkwMDU0MTk0.YfKxbg.RhRsNp3FPOPErfhO2l4_W2LckBc')
